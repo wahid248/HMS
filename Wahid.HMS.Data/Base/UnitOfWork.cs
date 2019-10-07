@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 using Wahid.HMS.Core.Abstract;
+using Wahid.HMS.Core.Abstract.Repositories;
 
-namespace Wahid.HMS.Data
+namespace Wahid.HMS.Data.Base
 {
     public class UnitOfWork : IUnitOfWork
     {
         private bool isDisposed = false;
-        public string ReturnString(string str) { return str; }
+
+        public IPatientRepository PatientRepository { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public void Dispose(bool disposing)
         {
             if (!isDisposed) return;

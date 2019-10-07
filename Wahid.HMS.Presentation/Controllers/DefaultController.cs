@@ -16,15 +16,9 @@ namespace Wahid.HMS.Presentation.Controllers
         }
 
         [Route("test")]
-        public string Index()
+        public IActionResult Test()
         {
-            return unitOfWork.ReturnString("ttt");
-        }
-
-        [Route("test2")]
-        public string Index2()
-        {
-            return unitOfWork.ReturnString("yyy");
+            return null;
         }
     }
 }

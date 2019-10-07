@@ -1,8 +1,9 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Wahid.HMS.Core.Abstract
 {
-    public interface IEntity<T>
+    public interface IEntity<T> : IValidatableObject
     {
         public T Id { get; set; }
         public bool IsDeleted { get; set; }

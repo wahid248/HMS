@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Wahid.HMS.Core\Wahid.HMS.Core.csproj" />
+    <ProjectReference Include="..\Wahid.HMS.Data\Wahid.HMS.Data.csproj" />
   </ItemGroup>
 
 </Project>

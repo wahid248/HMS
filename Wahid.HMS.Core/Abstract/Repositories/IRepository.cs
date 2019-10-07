@@ -12,6 +12,7 @@ namespace Wahid.HMS.Core.Abstract.Repositories
         void Add(TEntity entity);
         void AddRange(IEnumerable<TEntity> entities);
         void Update(TEntity entity);
+        void UpdateRange(IEnumerable<TEntity> entities);
         void Delete(TEntity entity);
         void DeleteRange(IEnumerable<TEntity> entities);
 
@@ -19,8 +20,5 @@ namespace Wahid.HMS.Core.Abstract.Repositories
         Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate = null);
         Task AddAsync(TEntity entity);
         Task AddRangeAsync(IEnumerable<TEntity> entities);
-        Task UpdateAsync(TEntity entity);
-        Task DeleteAsync(TEntity entity);
-        Task DeleteRangeAsync(IEnumerable<TEntity> entities);
     }
 }
