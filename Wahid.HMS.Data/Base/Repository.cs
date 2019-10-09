@@ -51,14 +51,24 @@ namespace Wahid.HMS.Data.Base
         public void Delete(TEntity entity)
         {
             entity.IsDeleted = true;
+            entity.ModifiedOn = _currentDateTime;
             _dbContext.Attach(entity);
             _dbContext.Entry(entity).State = EntityState.Modified;
+        }
+
+        public void DeletePermanently(TEntity entity)
+        {
+            _dbContext.Attach(entity);
+            _dbContext.Entry(entity).State = EntityState.Deleted;
         }
 
         public void DeleteRange(IEnumerable<TEntity> entities)
         {
             foreach (var entity in entities)
+            {
                 entity.IsDeleted = true;
+                entity.ModifiedOn = _currentDateTime;
+            }
             _dbContext.AttachRange(entities);
             foreach (var entity in entities)
                 _dbContext.Entry(entity).State = EntityState.Modified;

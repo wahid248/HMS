@@ -14,6 +14,7 @@ namespace Wahid.HMS.Core.Abstract.Repositories
         void Update(TEntity entity);
         void UpdateRange(IEnumerable<TEntity> entities);
         void Delete(TEntity entity);
+        void DeletePermanently(TEntity entity);
         void DeleteRange(IEnumerable<TEntity> entities);
 
         Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> predicate);

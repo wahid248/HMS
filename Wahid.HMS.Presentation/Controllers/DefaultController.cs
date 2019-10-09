@@ -9,16 +9,23 @@ namespace Wahid.HMS.Presentation.Controllers
 {
     public class DefaultController : Controller
     {
-        private readonly IUnitOfWork unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
         public DefaultController(IUnitOfWork unitOfWork)
         {
-            this.unitOfWork = unitOfWork;
+            this._unitOfWork = unitOfWork;
         }
 
-        [Route("test")]
+        [Route("insert")]
         public IActionResult Test()
         {
-            return null;
+            _unitOfWork.PatientRepository.Add(new Core.Entities.Patient
+            {
+                Serial = "serial",
+                Name = "name",
+                Sex = Core.Enums.Sex.Male
+            });
+            _unitOfWork.SaveChanges();
+            return Content("sucess");
         }
     }
 }

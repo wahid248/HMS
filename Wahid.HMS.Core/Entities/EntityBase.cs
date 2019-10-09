@@ -12,11 +12,9 @@ namespace Wahid.HMS.Core.Entities
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
         public bool IsDeleted { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime CreatedOn { get; set; }
         public virtual string CreatedBy { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime ModifiedOn { get; set; }
+        public DateTime? ModifiedOn { get; set; }
         public virtual string ModifiedBy { get; set; }
 
         public virtual IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
