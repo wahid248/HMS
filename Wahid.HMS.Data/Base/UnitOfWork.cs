@@ -10,10 +10,10 @@ namespace Wahid.HMS.Data.Base
 {
     public class UnitOfWork : IUnitOfWork
     {
-        protected readonly AppDbContext _context;
+        protected readonly DataContext _context;
         private bool isDisposed = false;
 
-        public UnitOfWork(AppDbContext appDbContext)
+        public UnitOfWork(DataContext appDbContext)
         {
             _context = appDbContext;
         }
@@ -24,6 +24,7 @@ namespace Wahid.HMS.Data.Base
             if (disposing)
             {
                 //free managed resources
+                this.Dispose();
             }
 
             //free unmanaged resources

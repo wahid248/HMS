@@ -10,6 +10,6 @@ namespace Wahid.HMS.Data.Repositories
 {
     public class PatientRepository : Repository<Patient, long>, IPatientRepository
     {
-        public PatientRepository(AppDbContext appDbContext) : base(appDbContext) { }
+        public PatientRepository(DataContext appDbContext) : base(appDbContext) { }
     }
 }

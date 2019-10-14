@@ -15,7 +15,7 @@ namespace Wahid.HMS.Data.Base
         protected readonly DbSet<TEntity> _dbSet;
         private readonly DateTime _currentDateTime;
 
-        public Repository(DbContext dbContext)
+        public Repository(DataContext dbContext)
         {
             _dbContext = dbContext;
             _dbSet = _dbContext.Set<TEntity>();
