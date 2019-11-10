@@ -11,8 +11,8 @@ namespace Wahid.HMS.Core.Entities
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
-        public bool IsDeleted { get; set; }
-        public DateTime CreatedOn { get; set; }
+        public bool IsArchived { get; set; }
+        public DateTime? CreatedOn { get; set; }
         public virtual string CreatedBy { get; set; }
         public DateTime? ModifiedOn { get; set; }
         public virtual string ModifiedBy { get; set; }

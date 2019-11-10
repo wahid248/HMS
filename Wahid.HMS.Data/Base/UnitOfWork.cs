@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Wahid.HMS.Core.Abstract;
 using Wahid.HMS.Core.Abstract.Repositories;
 using Wahid.HMS.Data.Repositories;
@@ -39,9 +40,9 @@ namespace Wahid.HMS.Data.Base
         {
             _context.SaveChanges();
         }
-        public void SaveChangesAsync()
+        public async Task SaveChangesAsync()
         {
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
         
